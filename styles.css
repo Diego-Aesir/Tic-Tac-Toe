@@ -13,10 +13,39 @@
     border: 1px solid black;
 }
 
-#boardGame .square .xmarked {
+#boardGame .square .xmarked::before,
+#boardGame .square .xmarked::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    background-color: black;
+    margin-top: 43px;
+}
 
+#boardGame .xmarked::before {
+    transform: rotate(45deg);
+}
+
+#boardGame .xmarked::after {
+    transform: rotate(-45deg);
 }
 
 #boardGame .square .omarked {
-    
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    border: 9px solid black;
+    margin-top: 4px;
+    margin-left: 6px;
+}
+
+#noticeBoard {
+    width: 300px;
+    background-color: cadetblue;
+    margin-left: 50px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    color: rgb(243, 243, 243);
 }
