@@ -1,5 +1,3 @@
-//Jogo da velha com objetos
-// Criar os objetos na tela com DOM
 function Player(name, marker) {
     this.name = name;
     this.marker = marker;
@@ -17,24 +15,21 @@ function TicTacToe(PlayerOne, PlayerTwo) {
     let currentPlayer = this.PlayerX;
 
     function win(markerPositions) {
-        //Verticais primeiro
-        if(markerPositions.includes(0,0) && markerPositions.includes(0,1) && markerPositions.includes(0,2)) {
+        if(markerPositions.includes("0,0") && markerPositions.includes("0,1") && markerPositions.includes("0,2")) {
             return true;
-        } else if (markerPositions.includes(1,0) && markerPositions.includes(1,1) && markerPositions.includes(1,2)) {
+        } else if (markerPositions.includes("1,0") && markerPositions.includes("1,1") && markerPositions.includes("1,2")) {
             return true;
-        } else if (markerPositions.includes(2,0) && markerPositions.includes(2,1) && markerPositions.includes(2,2)) {
+        } else if (markerPositions.includes("2,0") && markerPositions.includes("2,1") && markerPositions.includes("2,2")) {
             return true;
-            //Horizontais
-        } else if (markerPositions.includes(0,0) && markerPositions.includes(1,0) && markerPositions.includes(2,0)) {
+        } else if (markerPositions.includes("0,0") && markerPositions.includes("1,0") && markerPositions.includes("2,0")) {
             return true;
-        } else if (markerPositions.includes(0,1) && markerPositions.includes(1,1) && markerPositions.includes(2,1)) {
+        } else if (markerPositions.includes("0,1") && markerPositions.includes("1,1") && markerPositions.includes("2,1")) {
             return true;
-        } else if (markerPositions.includes(0,2) && markerPositions.includes(1,2) && markerPositions.includes(2,2)) {
+        } else if (markerPositions.includes("0,2") && markerPositions.includes("1,2") && markerPositions.includes("2,2")) {
             return true;
-            //Diagonais
-        } else if (markerPositions.includes(0,0) && markerPositions.includes(1,1) && markerPositions.includes(2,2)) {
+        } else if (markerPositions.includes("0,0") && markerPositions.includes("1,1") && markerPositions.includes("2,2")) {
             return true;
-        } else if (markerPositions.includes(0,2) && markerPositions.includes(1,1) && markerPositions.includes(2,0)) {
+        } else if (markerPositions.includes("0,2") && markerPositions.includes("1,1") && markerPositions.includes("2,0")) {
             return true;
         } else return false;        
     }
@@ -58,6 +53,7 @@ function TicTacToe(PlayerOne, PlayerTwo) {
     const game = () => {
         let notice_board = document.querySelector("#noticeBoard");
         let gameDiv = document.querySelector("#boardGame");
+        notice_board.innerHTML = this.PlayerX.name + " Turn";
 
         let Zero_Zero = document.createElement("div");
         Zero_Zero.value = "0,0";
@@ -68,11 +64,11 @@ function TicTacToe(PlayerOne, PlayerTwo) {
                 if(currentPlayer.marker === "X") {
                     this.PlayerX.markerPositions.push(Zero_Zero.value);
                     currentPlayer = this.PlayerO;
-                    console.log(this.PlayerX.markerPositions);
+                    notice_board.innerHTML = this.PlayerO.name + " Turn";
                 } else {
                     this.PlayerO.markerPositions.push(Zero_Zero.value);
                     currentPlayer = this.PlayerX;
-                    console.log(this.PlayerO.markerPositions);
+                    notice_board.innerHTML = this.PlayerX.name + " Turn";
                 }
             } else {
                 window.alert("The position: " + Zero_Zero.value + " is unavailable");
@@ -123,7 +119,7 @@ function TicTacToe(PlayerOne, PlayerTwo) {
 
         let gameOver = false;
         //while(!gameOver) {
-            notice_board.innerHTML = "X Turn";
+            
             
             //window.alert(currentPlayer.name + " Turn");
             
