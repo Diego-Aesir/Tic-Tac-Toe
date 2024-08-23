@@ -1,0 +1,22 @@
+#boardGame {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 8px;
+    margin-left: 50px;
+}
+
+#boardGame .square {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(54, 142, 158, 0.582);
+    border: 1px solid black;
+}
+
+#boardGame .square .xmarked {
+
+}
+
+#boardGame .square .omarked {
+    
+}
