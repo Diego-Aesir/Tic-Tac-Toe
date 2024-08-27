@@ -49,3 +49,13 @@
     font-size: larger;
     color: rgb(243, 243, 243);
 }
+
+#score {
+    width: 300px;
+    background-color: cadetblue;
+    margin-left: 50px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    color: rgb(243, 243, 243);
+}
